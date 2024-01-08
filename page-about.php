@@ -5,111 +5,45 @@ get_header();
 
 <main id="primary" class="site-main">
 	<div class="about">
-		<div class="about-block">
-			<div class="about-block-left bg-green">
-				<div class="profile">
-					<div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);">
+		<?php
+		$args = array(
+			'post_type' => 'about',
+			'post_status' => 'publish',
+			'posts_per_page' => 100,
+			'order' => 'asc',
+		);
+		$query = new WP_Query($args);
+		if ($query->have_posts()):
+			while ($query->have_posts()):
+				$query->the_post(); ?>
+				<div class="about-block">
+					<div class="about-block-left bg-<?php the_field('about_color'); ?>">
+						<div class="profile">
+							<!-- <div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);"> -->
+							<div class="profile-img" style="background-image:url(<?php the_field('about_image'); ?>);">
+							</div>
+							<div class="profile-text bebas">
+								<?php the_title(); ?>
+							</div>
+						</div>
 					</div>
-					<div class="profile-text bebas">Green</div>
-				</div>
-			</div>
-			<div class="about-block-right">
-				<div class="profile-des">Green, In subtractive color systems, used in painting and color printing, it is
-					created by a combination of yellow and cyan; in the RGB color model, used on television and computer
-					screens.</div>
-				<div class="profile-link-box">
-					<div class="profile-link">Instagram<a href=""> @empty_green</a>
+					<div class="about-block-right">
+						<div class="profile-des">
+							<?php the_field('about_desc'); ?>
+						</div>
+						<div class="profile-link-box">
+							<?php the_field('about_link'); ?>
+							<?php the_field('about_link2'); ?>
+
+						</div>
 
 					</div>
-					<div class="profile-link">
-						E-mail<a href=""> green@empty.com</a></div>
 				</div>
 
-			</div>
-		</div>
-		<div class="about-block">
-			<div class="about-block-left bg-green">
-				<div class="profile">
-					<div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);">
-					</div>
-					<div class="profile-text bebas">Green</div>
-				</div>
-			</div>
-			<div class="about-block-right">
-				<div class="profile-des">Green, In subtractive color systems, used in painting and color printing, it is
-					created by a combination of yellow and cyan; in the RGB color model, used on television and computer
-					screens.</div>
-				<div class="profile-link-box">
-					<div class="profile-link">Instagram @empty_green
+			<?php endwhile; endif; ?>
 
-					</div>
-					<div class="profile-link">E-mail green@empty.com</div>
-				</div>
 
-			</div>
-		</div>
-		<div class="about-block">
-			<div class="about-block-left bg-green">
-				<div class="profile">
-					<div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);">
-					</div>
-					<div class="profile-text bebas">Green</div>
-				</div>
-			</div>
-			<div class="about-block-right">
-				<div class="profile-des">Green, In subtractive color systems, used in painting and color printing, it is
-					created by a combination of yellow and cyan; in the RGB color model, used on television and computer
-					screens.</div>
-				<div class="profile-link-box">
-					<div class="profile-link">Instagram @empty_green
 
-					</div>
-					<div class="profile-link">E-mail green@empty.com</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="about-block">
-			<div class="about-block-left bg-green">
-				<div class="profile">
-					<div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);">
-					</div>
-					<div class="profile-text bebas">Green</div>
-				</div>
-			</div>
-			<div class="about-block-right">
-				<div class="profile-des">Green, In subtractive color systems, used in painting and color printing, it is
-					created by a combination of yellow and cyan; in the RGB color model, used on television and computer
-					screens.</div>
-				<div class="profile-link-box">
-					<div class="profile-link">Instagram @empty_green
-
-					</div>
-					<div class="profile-link">E-mail green@empty.com</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="about-block">
-			<div class="about-block-left bg-green">
-				<div class="profile">
-					<div class="profile-img" style="background-image:url(/wp-content/uploads/2024/01/cha_green.png);">
-					</div>
-					<div class="profile-text bebas">Green</div>
-				</div>
-			</div>
-			<div class="about-block-right">
-				<div class="profile-des">Green, In subtractive color systems, used in painting and color printing, it is
-					created by a combination of yellow and cyan; in the RGB color model, used on television and computer
-					screens.</div>
-				<div class="profile-link-box">
-					<div class="profile-link">Instagram @empty_green
-					</div>
-					<div class="profile-link">E-mail green@empty.com</div>
-				</div>
-
-			</div>
-		</div>
 		<div class="about-block-e">
 			<div class="about-block-end">
 				<div class="credit bebas">credit</div>
@@ -134,3 +68,8 @@ get_header();
 
 <?php
 get_footer();
+
+
+
+
+

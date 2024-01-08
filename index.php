@@ -136,10 +136,10 @@ get_header();
 		<div class="news-content">
 			<?php
 			$args = array(
-				'post_type' => 'news',
-				'post_status' => 'publish',
-				'posts_per_page' => 100,
-				'order' => 'asc'
+				'post_type' => 'news', // function.php에서 register_post_type의 첫번째 인자로 넣은 것과 같은 것을 넣어줌.
+				'post_status' => 'publish', // 포스트 중에서 publish된 것 만 보여주겠다. (draft(작성중인 것)은 보여주지 않음)
+				'posts_per_page' => 100, // 한 페이지 당 보여줄 갯수
+				'order' => 'asc',
 			);
 			$query = new WP_Query($args);
 			if ($query->have_posts()):
@@ -147,7 +147,7 @@ get_header();
 					$query->the_post(); ?>
 
 					<a href="<?php the_field('news_link'); ?>" class="news-block">
-						<div class="news-img" style="background-image:url(<?php the_field('news_img'); ?>);">
+						<div class="news-img" style="background-image:url(<?php the_field('news_image'); ?>);">
 						</div>
 						<div class="news-textbox">
 							<div class="news-category <?php the_field('news_label_color'); ?>">
@@ -163,8 +163,8 @@ get_header();
 							</div>
 						</div>
 					</a>
-
 				<?php endwhile; endif; ?>
+
 		</div>
 	</div>
 	<div class="archive">
