@@ -13,11 +13,11 @@
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
 		<div class="footer-box">
-			<a href="" target="_blank" class="footer-btn" style="display:none;">
+			<a hlang="ko-KR" lang="ko-KR" href="<?php echo site_url('/ko'); ?>" class="footer-btn ko">
 				<img src="/wp-content/uploads/2024/01/icon_lang.png" alt="language">
 				<span class="footer-btn-text bebas">Korean</span>
 			</a>
-			<a href="" target="_blank" class="footer-btn">
+			<a hlang="en-US" lang="en-US" href="<?php echo site_url(); ?>" class="footer-btn en">
 				<img src="/wp-content/uploads/2024/01/icon_lang.png" alt="language">
 				<span class="footer-btn-text bebas">English</span>
 			</a>

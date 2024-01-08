@@ -15,15 +15,13 @@
 
     <div class="detail-info">
         <div class="detail-info-title">
-            Yello backflsdkjf
+            <?php the_title(); ?>
         </div>
         <div class="detail-info-des">
-            sdflksdjflksdj sdlfksjdflksjdfsd #post-sdfsldfkj sdlkfjsldkfj
+            <?php the_field('project_desc'); ?>
         </div>
         <div class="detail-info-credit">
-            Graphinc detin : bon
-            dslkfjsdflkj : bon
-            dslkfjsdflkj : bon
+            <?php the_field('project_credit'); ?>
         </div>
     </div>
 
@@ -32,87 +30,48 @@
 
 
     <div class="detail-content">
-        <div class="detail-start-img"
-            style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+        <div class="detail-start-img" style="background-image:url(<?php the_field('project_image'); ?>)">
         </div>
 
         <div class="detail-section">
+            <!-- col 1 -->
             <div class="detail-col">
-                <div class="detail-1col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-1col-img" style="background-image:url(<?php the_field('detail_col1_image'); ?>)">
                 </div>
             </div>
-            <div class="detail-text">sdlkfjslfkjslfkjsdlfkjslfkjs slfkjsdlfkjs sdlkfjsdlkfj</div>
+            <div class="detail-text">
+                <?php the_field('detail_col1_text'); ?>
+            </div>
         </div>
         <div class="detail-section">
+            <!-- col 2 -->
             <div class="detail-col">
-                <div class="detail-2col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-2col-img" style="background-image:url(<?php the_field('detail_col2_image'); ?>)">
                 </div>
-                <div class="detail-2col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-2col-img" style="background-image:url(<?php the_field('detail_col2_image2'); ?>)">
                 </div>
             </div>
-            <div class="detail-text">sdlkfjslfkjslfkjsdlfkjslfkjs slfkjsdlfkjs sdlkfjsdlkfj</div>
+            <div class="detail-text">
+                <?php the_field('detail_col2_text'); ?>
+            </div>
         </div>
         <div class="detail-section">
+            <!-- col 3 -->
             <div class="detail-col">
-                <div class="detail-3col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-3col-img" style="background-image:url(<?php the_field('detail_col3_image'); ?>)">
                 </div>
-                <div class="detail-3col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-3col-img" style="background-image:url(<?php the_field('detail_col3_image2'); ?>)">
                 </div>
-                <div class="detail-3col-img"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)">
+                <div class="detail-3col-img" style="background-image:url(<?php the_field('detail_col3_image3'); ?>)">
                 </div>
             </div>
 
-            <div class="detail-text">sdlkfjslfkjslfkjsdlfkjslfkjs slfkjsdlfkjs sdlkfjsdlkfj</div>
+            <div class="detail-text">
+                <?php the_field('detail_col3_text'); ?>
+            </div>
         </div>
 
-        <div class="detail-explore">
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-            <a href="#" class="archive-block">
-                <div class="archive-image"
-                    style="background-image:url(http://localhost:8888/wp-content/uploads/2024/01/img12.jpg)"></div>
-            </a>
-        </div>
+        <?php get_template_part('template-parts/detail-explore') ?>
 
     </div>
 </article><!-- #post-<?php the_ID(); ?> -->

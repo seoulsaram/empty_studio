@@ -23,7 +23,8 @@
   opacity: 0.5;
 }
 
-.menu-menu-container > ul {
+.menu-menu-container > ul,
+.menu-menu-korean-container > ul {
   display: flex;
   gap: 30px;
 }
